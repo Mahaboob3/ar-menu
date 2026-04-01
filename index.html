@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Digital Menu</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f8f8; text-align: center; }
+        header { background-color: #ff4757; color: white; padding: 20px; font-size: 24px; font-weight: bold; }
+        .menu-container { padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .menu-item { background: white; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px; width: 90%; max-width: 400px; overflow: hidden; padding-bottom: 15px; }
+        .menu-item img { width: 100%; height: 200px; object-fit: cover; }
+        .menu-item h2 { margin: 15px 0 5px 0; }
+        .menu-item p { color: #777; margin-bottom: 15px; }
+        .ar-button { background-color: #2ed573; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; }
+        .ar-button:hover { background-color: #26af5f; }
+    </style>
+</head>
+<body>
 
+    <header>Delicious Eats AR</header>
+
+    <div class="menu-container">
+        <!-- Item 1: Burger -->
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=500&q=80" alt="Burger">
+            <h2>Classic Burger</h2>
+            <p>Juicy beef patty with fresh lettuce and cheese.</p>
+            <!-- This link sends the user to the AR page and tells it to load 'burger' -->
+            <a href="ar.html?item=burger" class="ar-button">View in AR</a>
+        </div>
+
+        <!-- Item 2: Pizza -->
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Pizza">
+            <h2>Pepperoni Pizza</h2>
+            <p>Traditional crust with spicy pepperoni and mozzarella.</p>
+            <!-- This link sends the user to the AR page and tells it to load 'pizza' -->
+            <a href="ar.html?item=pizza" class="ar-button">View in AR</a>
+        </div>
+    </div>
+
+</body>
+</html>

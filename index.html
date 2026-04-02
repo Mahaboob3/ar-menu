@@ -3,40 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Digital Menu</title>
+    <title>Premium AR Menu</title>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f8f8; text-align: center; }
-        header { background-color: #ff4757; color: white; padding: 20px; font-size: 24px; font-weight: bold; }
-        .menu-container { padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .menu-item { background: white; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px; width: 90%; max-width: 400px; overflow: hidden; padding-bottom: 15px; }
-        .menu-item img { width: 100%; height: 200px; object-fit: cover; }
-        .menu-item h2 { margin: 15px 0 5px 0; }
-        .menu-item p { color: #777; margin-bottom: 15px; }
-        .ar-button { background-color: #2ed573; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; }
-        .ar-button:hover { background-color: #26af5f; }
+        :root { --primary: #2d3436; --accent: #fab1a0; --glass: rgba(255, 255, 255, 0.8); }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #f0f2f5; color: var(--primary); }
+        
+        /* Premium Header */
+        .header { height: 200px; background: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80') center/cover; position: relative; border-radius: 0 0 30px 30px; }
+        .header-overlay { position: absolute; bottom: -30px; left: 5%; width: 90%; background: var(--glass); backdrop-filter: blur(10px); padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); box-sizing: border-box; text-align: center; }
+        
+        .restaurant-name { margin: 0; font-size: 22px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+        .tagline { font-size: 12px; color: #636e72; margin: 5px 0 0; }
+
+        .menu-section { margin-top: 60px; padding: 20px; }
+        .section-title { font-size: 18px; font-weight: 600; margin-bottom: 20px; border-left: 4px solid var(--accent); padding-left: 10px; }
+
+        /* Premium Item Cards */
+        .card { background: white; border-radius: 20px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; align-items: center; padding: 10px; }
+        .card-img { width: 100px; height: 100px; border-radius: 15px; object-fit: cover; }
+        .card-info { flex: 1; padding: 0 15px; }
+        .card-info h3 { margin: 0; font-size: 16px; }
+        .card-info p { margin: 5px 0; font-size: 12px; color: #b2bec3; }
+        .price { font-weight: 600; color: #2d3436; display: block; margin-top: 5px; }
+
+        .ar-btn { background: var(--primary); color: white; padding: 10px 15px; border-radius: 12px; text-decoration: none; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px; transition: 0.3s; }
+        .ar-btn:active { transform: scale(0.95); }
     </style>
 </head>
 <body>
 
-    <header>Delicious Eats AR</header>
+    <div class="header">
+        <div class="header-overlay">
+            <h1 class="restaurant-name">The Golden Grill</h1>
+            <p class="tagline">✦ Experience Food in Augmented Reality ✦</p>
+        </div>
+    </div>
 
-    <div class="menu-container">
-        <!-- Item 1: Burger -->
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=500&q=80" alt="Burger">
-            <h2>Classic Burger</h2>
-            <p>Juicy beef patty with fresh lettuce and cheese.</p>
-            <!-- This link sends the user to the AR page and tells it to load 'burger' -->
-            <a href="ar.html?item=burger" class="ar-button">View in AR</a>
+    <div class="menu-section">
+        <h2 class="section-title">Signature Dishes</h2>
+
+        <!-- Item 1 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=200" class="card-img">
+            <div class="card-info">
+                <h3>Truffle Burger</h3>
+                <p>Wagyu beef & black truffle.</p>
+                <span class="price">$24.00</span>
+            </div>
+            <a href="ar.html?item=burger&name=Truffle%20Burger&price=$24" class="ar-btn">
+                <span>👁️</span> AR VIEW
+            </a>
         </div>
 
-        <!-- Item 2: Pizza -->
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Pizza">
-            <h2>Pepperoni Pizza</h2>
-            <p>Traditional crust with spicy pepperoni and mozzarella.</p>
-            <!-- This link sends the user to the AR page and tells it to load 'pizza' -->
-            <a href="ar.html?item=pizza" class="ar-button">View in AR</a>
+        <!-- Item 2 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200" class="card-img">
+            <div class="card-info">
+                <h3>Artisan Pizza</h3>
+                <p>Hand-stretched sourdough.</p>
+                <span class="price">$19.00</span>
+            </div>
+            <a href="ar.html?item=pizza&name=Artisan%20Pizza&price=$19" class="ar-btn">
+                <span>👁️</span> AR VIEW
+            </a>
         </div>
     </div>
 
